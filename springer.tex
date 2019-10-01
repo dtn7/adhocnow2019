@@ -1,0 +1,76 @@
+\documentclass[runningheads]{llncs}
+\usepackage{amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{tikz-uml}
+\usepackage{courier}
+\usepackage{listings}
+\lstset{basicstyle=\footnotesize\ttfamily, breaklines=true}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{silence}
+\WarningFilter{caption}{Unsupported document class}
+\usepackage{subcaption}
+
+
+\newcommand{\dtn}{DTN7\xspace}
+\newcommand{\todo}[1]{\textcolor{red}{#1}}
+\newcommand{\footurl}[1]{\footnote{\url{#1}}}
+
+\begin{document}
+
+\title{\dtn: An Open-Source Disruption-tolerant Networking Implementation of Bundle Protocol 7}
+\author{
+	Alvar Penning\inst{1} \and
+	Lars Baumgärtner\inst{3} \and 
+    Jonas Höchst\inst{1,2} \and \\
+	Artur Sterz\inst{1,2} \and 
+    Mira Mezini\inst{3} \and
+	Bernd Freisleben\inst{1,2}
+}
+
+\authorrunning{Penning et al.}
+\titlerunning{\dtn: An Open-Source Implementation of Bundle Protocol 7}
+
+\institute{
+    \textit{Dept. of Math. \& Computer Science, Philipps-Universität Marburg, Germany} \\
+	\email{\{penning, hoechst, sterz, freisleb\}@informatik.uni-marburg.de} \\ \and
+    \textit{Dept. of Electr. Engineering \& Information Technology, TU Darmstadt, Germany} \\
+	\email{\{jonas.hoechst, artur.sterz\}@maki.tu-darmstadt.de} \and
+	\textit{Dept. of Computer Science, TU Darmstadt, Germany} \\
+	\email{\{baumgaertner, mezini\}@cs.tu-darmstadt.de}
+}
+
+\maketitle
+
+\begin{abstract}
+\input{00_abstract}
+
+\keywords{delay-tolerant networking \and disruption-tolerant networking}
+%\and bundle protocol}
+\end{abstract}
+
+\input{01_intro}
+\input{02_relwork}
+\input{03_bp7}
+\input{04_implementation}
+\input{05_evaluation}
+\input{06_conclusion}
+
+\section*{Acknowledgement}
+This work is funded by the HMWK (LOEWE Natur 4.0 and LOEWE emergenCITY) and the DFG (SFB 1053 - MAKI).
+
+
+% \newpage
+
+\bibliographystyle{splncs04}
+\bibliography{literature}
+
+\end{document}

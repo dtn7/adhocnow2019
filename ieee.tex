@@ -1,0 +1,82 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+\usepackage{amssymb,amsfonts}
+\usepackage{graphicx}
+\usepackage{cite}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{xspace}
+\usepackage{hyperref}
+\usepackage{tikz}
+\usepackage{tikz-uml}
+\usepackage{courier}
+\usepackage{listings}
+\lstset{basicstyle=\footnotesize\ttfamily, breaklines=true}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{silence}
+\WarningFilter{caption}{Unsupported document class}
+\usepackage{subcaption}
+    
+\newcommand{\dtn}{DTN7\xspace}
+\newcommand{\footurl}[1]{\footnote{\url{#1}}}
+
+\begin{document}
+
+\title{\dtn: An Open-Source Disruption-tolerant Networking Implementation of Bundle Protocol 7}
+
+\author{
+	\IEEEauthorblockN{
+		Jonas Höchst\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}, 
+		Lars Baumgärtner\IEEEauthorrefmark{3}, 
+		Alvar Penning\IEEEauthorrefmark{1}, 
+		Artur Sterz\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}, 
+		Mira Mezini\IEEEauthorrefmark{3},
+		Bernd Freisleben\IEEEauthorrefmark{1}\IEEEauthorrefmark{2}, 
+	} \\
+	\IEEEauthorblockA{
+		\IEEEauthorrefmark{1}\textit{Dept. of Mathematics \& Computer Science}, Philipps-Universit\"{a}t Marburg, Germany \\
+		E-mail: \{hoechst, penning, sterz, freisleb\}@informatik.uni-marburg.de
+	}
+	\IEEEauthorblockA{
+		\IEEEauthorrefmark{2}\textit{Dept. of Electrical Engineering \& Information Technology}, TU Darmstadt, Germany\\
+		E-mail: \{jonas.hoechst, artur.sterz,  bernd.freisleben\}@maki.tu-darmstadt.de
+	}
+	\IEEEauthorblockA{
+		\IEEEauthorrefmark{3}\textit{Dept. of Computer Science}, TU Darmstadt, Germany\\
+        E-mail: \{baumgaertner, mezini\}@cs.tu-darmstadt.de \\
+    }
+}
+
+\maketitle
+
+\begin{abstract}
+\input{00_abstract}
+\end{abstract}
+
+\begin{IEEEkeywords}
+delay-tolerant networking, disruption-tolerant networking,
+bundle protocol
+\end{IEEEkeywords}
+
+
+\input{01_intro}
+\input{02_relwork}
+\input{03_bp7}
+\input{04_implementation}
+\input{05_evaluation}
+\input{06_conclusion}
+
+\section*{Acknowledgement}
+
+This work is funded by the LOEWE initiative (Hessen, Germany) within the Natur 4.0 project and the Deutsche Forschungsgemeinschaft (DFG, SFB 1053 - MAKI).
+
+
+\bibliographystyle{IEEEtran}
+\bibliography{IEEEabrv,literature}
+
+
+\end{document}

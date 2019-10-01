@@ -1,0 +1,36 @@
+\section{Introduction}
+\label{sec:intro}
+
+Delay- or disruption-tolerant networking (DTN) is useful in situations where a reliable connection to a communication infrastructure cannot be established, e.g., during environmental monitoring in remote areas, if telecommunication networks are destroyed as a result of natural or man-made disasters, or 
+if access is blocked due to political censorship. In DTN, messages are transmitted hop-to-hop from network node to network node in a store-carry-forward manner. 
+There might be larger time windows between two transmissions, and the next node to carry a message might be reached opportunistically or through scheduled contacts.
+%, e.g., if people are roaming in a disaster scenario or in interplanetary networks with satellites. 
+%In the meantime, nodes store messages locally, which means that a fully connected network is no longer required.
+
+There are several mobile DTN appications, such as FireChat~\cite{garden2015firechat} and Serval~\cite{gardner2011serval}, that rely on peer-to-peer networks of smartphones, where
+the pre-installed Wi-Fi or Bluetooth hardware of the mobile devices is used to create a large mesh network.
+{\textmu}PCN~\cite{feldmann2015upcn} is a special purpose DTN application for planetary communication, and IBR-DTN~\cite{doering2008ibr} is a popular DTN platform, but does not implement the recently released Bundle Protocol (BP) Version 7~\cite{dtn_bp7v13}.
+
+In this paper, we present \dtn, which (to the best of our knowledge) is the first and only freely available, open source implementation of the most recent draft of Bundle Protocol Version 7 (BP7) (draft version 13).
+\dtn is designed to offer extensibility by allowing developers to easily replace or add individual components. 
+\dtn is a general purpose DTN software with support for several use cases, such as enabling communication in disaster scenarios or providing connectivity in rural areas. 
+Our contributions are:
+\begin{itemize}
+    \item We provide a memory-safe and concurrent open-source implementation of BP7 (draft version 13), written in the Go programming language.
+    \item With its highly modular design and its focus on extensibility by providing interfaces to all important components, \dtn is a flexible basis for DTN research and application development for a wide range of scenarios.
+    \item We compare \dtn with other well-known DTN systems including Serval, IBR-DTN, and Forban, using the CORE network emulation framework.
+    \item Several experiments to mimic different DTN test cases, i.e., a chain of up to 64 nodes with different payload sizes,
+    %as well as a scenario with multiple mobile nodes
+    are conducted.
+    \item The presented \dtn 
+    software\footnote{\url{https://github.com/dtn7/dtn7-go}},
+    the evaluation framework and its 
+    configurations\footnote{\url{https://github.com/dtn7/adhocnow2019-evaluation}},
+    and the experimental 
+    fragments\footnote{\url{https://ds.mathematik.uni-marburg.de/dtn7/adhoc-now_2019.tar.gz}}
+    are freely available.
+\end{itemize}
+
+The paper is structured as follows. Section~\ref{sec:relwork} discusses related work. 
+In Section~\ref{sec:bp7}, we briefly explain BP7. Section~\ref{sec:implementation} discusses \dtn's design and implementation.
+Section~\ref{sec:evaluation} describes experimental results. Section~\ref{sec:conclusion} concludes the paper and outlines areas of future work.

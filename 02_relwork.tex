@@ -1,0 +1,40 @@
+\section{Related Work}
+\label{sec:relwork}
+
+This section briefly reviews relevant publications in the area of DTN software.
+
+\subsection{DTN Software Implementations}
+
+IBR-DTN~\cite{doering2008ibr} is a lightweight, modular DTN software for terrestrial use.  
+%Both vehicles and stationary network components are envisaged as DTN nodes, especially for public transport or environmental monitoring.
+The Interplanetary Overlay Network (ION)
+%developed by NASA, 
+focuses on the aspects of extreme distances in space~\cite{burleigh2007interplanetary}.
+DTN2 is the reference implementation of the BP, developed by the IETF DTN working group~\cite{demmer2004implementing}.
+These three implementations are based on RFC 5050, i.e., BP Version 6~\cite{rfc5050}.
+
+Designed for small satellites in low earth orbit, {\textmu}PCN can be used to connect different regions of the world.
+It also implements BP Version 6, as well as an older draft of version 7~\cite{feldmann2015upcn}.
+% that exchange data during a satellite's overflight.
+Furthermore, an older version of BP7 is implemented in Terra~\cite{rightmesh2019Terra}.
+
+% Serval supports communication in disaster situations and connects farmers in the Australian outback.
+Serval focuses on node mobility by providing implementations that run on smartphones, as well as by incorporating different radio link technologies~\cite{gardner2011serval}.
+% such as WiFi and UHF/VHF radios.
+Forban is a peer-to-peer file sharing application that uses common Internet protocols like IP and HTTP to transmit files in a delay-tolerant manner~\cite{dulauny2019forban}.
+With FireChat~\cite{garden2015firechat}, it is possible to send messages via DTN without relying on Internet access or direct peer contacts.
+
+Many of the mentioned DTN systems implement the BP as specified in RFC 5050~\cite{rfc5050}.
+While some implement a draft of BP7, none of them implements the most recent draft.
+Serval, Forban, and FireChat have their own protocol definitions, which are not compatible with the BP.
+Furthermore, the mentioned implementations cannot be extended in a modular manner, are not written in developer-friendly high-level programming languages and are not intended as general purpose DTN platforms, but are designed for specific use cases.
+FireChat is not freely available, and thus cannot be extended.
+%Finally, the used languages, interfaces and architecture do not fulfill the requirements as discussed in Section ~\ref{sec:implementation}.
+
+\subsection{DTN Software Evaluations}
+
+IBR-DTN, DTN2, and ION were evaluated by Pottner et. al~\cite{pottner2011performance}. For a payload of 1 MB, DTN2 and IBR-DTN produced almost identical results. ION was slower in the conducted measurements. Furthermore, the interaction of the three DTN implementations was evaluated by transferring bundles between them, and the times measured varied significantly.
+
+IBR-DTN was used to evaluate the connection between a stationary DTN node and a moving vehicle~\cite{doering2008ibr}. This vehicle passed the stationary node at an average speed of 20 km/h, and the transmission rate was measured in relation to the distance. Data could be transmitted within a range of about 200 meters.
+
+Serval was experimentally evaluated in our previous work~\cite{baumgaertner2016serval}, for scenarios with 48 nodes in a hub topology, 64 nodes in a chain topology, and 100 nodes in disjoint islands connected over time. The results indicate that Serval can achieve high network loads, while CPU usage remains relatively low.
