@@ -1,5 +1,5 @@
 \section{\dtn}
-\label{sec:implementation}
+\label{penning2019dtn7:sec:implementation}
 
 In this section, we present the design and implementation of \dtn. 
 %At first we identify the requirements for a DTN software. 
@@ -41,10 +41,10 @@ To make programming of applications against these interfaces simple and programm
     \centering
     \includegraphics[width=0.9\columnwidth]{figs/application_overview.pdf}
     \caption{Architecture and data flow in \dtn}
-    \label{fig:overview}
+    \label{penning2019dtn7:fig:overview}
 \end{figure}
 
-Fig.~\ref{fig:overview} shows the modules of \dtn and their interaction.
+Fig.~\ref{penning2019dtn7:fig:overview} shows the modules of \dtn and their interaction.
 The arrows indicate the way a bundle is internally processed in \dtn. 
 The links between two distinct \dtn nodes are shown by both an active CLA and the Discovery on the figure's left hand side. 
 Multiple client connections to the AA from within the node are delineated on the node's right hand side.
@@ -74,7 +74,7 @@ This discovery mechanism broadcasts all of the node's CLAs continuously and noti
 The previously defined components are linked together within \dtn's \textit{Core} package. 
 A central processing pipeline consumes both newly created and inbound bundles. 
 Within this pipeline, a bundle will be marked to be delivered to a subset of known CLAs, to a local AA or to be discarded for later processing or even removed.
-The Core's internal links, visualized in Fig.~\ref{fig:overview}, are related to the concept of a BPA, and serve as an interface between CLAs and the AA.
+The Core's internal links, visualized in Fig.~\ref{penning2019dtn7:fig:overview}, are related to the concept of a BPA, and serve as an interface between CLAs and the AA.
 
 %% Routing
 Every bundle that is not addressed to a particular node will be forwarded over one or multiple CLAs to neighboring nodes.
@@ -89,16 +89,16 @@ Finally, \dtn is also intended to be used as a library and allows fast developme
 
 \subsection{Resulting Programs}
 
-\dtn contains a DTN daemon, referred to as \texttt{dtnd} in Fig.~\ref{fig:overview}, for storing and exchanging bundles and interfacing with applications. Currently, an example DTN application (\texttt{dtncat} in Fig.~\ref{fig:overview}) for sending and receiving bundles, implemented as a command line tool, is included. 
+\dtn contains a DTN daemon, referred to as \texttt{dtnd} in Fig.~\ref{penning2019dtn7:fig:overview}, for storing and exchanging bundles and interfacing with applications. Currently, an example DTN application (\texttt{dtncat} in Fig.~\ref{penning2019dtn7:fig:overview}) for sending and receiving bundles, implemented as a command line tool, is included. 
 \texttt{dtnd} initializes the previously defined modules according to the configuration provided by the user.
 \texttt{dtncat} processes user input, which is handed over to \texttt{dtnd}'s AA RESTful interface.
 The input is then encapsulated inside the Payload Block of a newly created bundle by \texttt{dtnd}. This bundle's Primary Block will be populated with basic defaults, like disabled CRC, and a delivery report request.
-As shown in Listing~\ref{lst:dtncat}, \texttt{dtncat} is called by passing parameters on the command line. 
+As shown in Listing~\ref{penning2019dtn7:lst:dtncat}, \texttt{dtncat} is called by passing parameters on the command line. 
 The first option selects between receiving or sending bundles.
 The local \texttt{dtnd}, running the RESTful API, is addressed by the second parameter. 
 When sending new bundles, the content is read from the standard input.
 
-\begin{lstlisting}[caption={\texttt{dtncat} example}, captionpos={b}, label={lst:dtncat}]
+\begin{lstlisting}[caption={\texttt{dtncat} example}, captionpos={b}, label={penning2019dtn7:lst:dtncat}]
 # Sending a bundle
 $ dtncat send http://localhost:8080 dtn:s2 <<< "3782 lx"
 

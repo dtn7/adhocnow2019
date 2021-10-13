@@ -1,5 +1,5 @@
 \section{Experimental Evaluation}
-\label{sec:evaluation}
+\label{penning2019dtn7:sec:evaluation}
 
 In this section, we experimentally evaluate \dtn and compare it with other DTN software.
 
@@ -76,28 +76,28 @@ Finally, every used DTN software logged both the timestamp of sending and receiv
 \subsection{Results}
 
 \subsubsection{Transmission Times.}
-\label{subsub:transmission_time}
+\label{penning2019dtn7:subsub:transmission_time}
 
-\begin{figure}[t]
+\begin{figure}[th]
     \centering
   %  \begin{subfigure}[t]{0.5\columnwidth}
   %    \centering
         \includegraphics[width=0.8\columnwidth]{figs/chain-runtimes-2.pdf}
         \caption{Bundle transmission time for the 1-hop topology and different payload sizes}
-        \label{fig:transmissions1}
+        \label{penning2019dtn7:fig:transmissions1}
   %    \end{subfigure}~
 \end{figure}
-\begin{figure}[h]
+\begin{figure}[th]
  %   \begin{subfigure}[t]{0.5\columnwidth}
         \centering
         \includegraphics[width=0.8\columnwidth]{figs/chain-runtimes-64.pdf}
   %      \caption{64 hops}
  %   \end{subfigure}
     \caption{Bundle transmission time for the 64-hops topology and different payload sizes.}
-    \label{fig:transmissions64}
+    \label{penning2019dtn7:fig:transmissions64}
 \end{figure}
 
-Figs.~\ref{fig:transmissions1} and \ref{fig:transmissions64} show the bundle transmission times on the y-axes and payload sizes on the x-axes for the 1-hop and 64-hops topologies, respectively.
+Figs.~\ref{penning2019dtn7:fig:transmissions1} and \ref{penning2019dtn7:fig:transmissions64} show the bundle transmission times on the y-axes and payload sizes on the x-axes for the 1-hop and 64-hops topologies, respectively.
 Regardless of chain length and file size, \dtn and IBR-DTN are always the fastest DTN software systems.
 The larger the files become, the transfer times of all DTN systems converge.
 This is due to the network configuration.
@@ -107,7 +107,7 @@ As a result, the transfer times for large files hardly vary at all.
 For a single hop, Forban and Serval take about the same time for transmitting files (e.g., about 0.6 seconds for 64 KiB files), but Forban shows a higher variance.
 For longer chains and files below 50 MiB, the differences between Forban and Serval are more noticable.
 \dtn, however, is still up to 140 times (64 KiB over 1 hop) faster than Serval. %\dtn converges when approaching 100 MiB files.
-Particularly in chat or text based applications, the speed advantage of \dtn can be crucial if a message arrives below 0.01 seconds rather than after one second.
+Particularly in chat or text based applications, the speed advantage of \dtn can be crucial if a message arrives below 0.01 seconds rather pdfcthan after one second.
 
 These results indicate that both BP6 and BP7 have a relatively small protocol overhead compared to the protocols used by Serval and Forban, which is especially noticeable for small files.
 The larger the files or the longer the chain, the less weight the low protocol overhead carries.
@@ -115,18 +115,16 @@ Furthermore, it is also remarkable that \dtn, which is written in Go, does not t
 In terms of transmission speeds, Forban takes longer than the other DTN software systems, although differences get smaller the bigger the files are. One explanation is that Forban has a pull-based approach where it actively downloads new bundles after an announcement was received. Therefore, the announcement interval is a natural barrier. If quick data exchange is necessary, the other solutions provide better performance.
 
 \begin{figure}[t]
-%    \centering
-\hspace{-15mm}
-    \includegraphics[width=1.2\columnwidth]{figs/cpu_network.pdf}
+    \includegraphics[width=\columnwidth]{figs/cpu_network-crop.pdf}
     \caption{CPU and network usage for transmitting 25 MiB over 32 hops.}
-    \label{fig:cpu_net}
+    \label{penning2019dtn7:fig:cpu_net}
 \end{figure}
 
 
 \subsubsection{CPU Usage and Network Utilization.}
 
 
-Fig.~\ref{fig:cpu_net} shows CPU usage and network utilization for transmitting 25 MiB over 32 hops.
+Fig.~\ref{penning2019dtn7:fig:cpu_net} shows CPU usage and network utilization for transmitting 25 MiB over 32 hops.
 On the x-axes, the time for the entire experiment in seconds is shown, the left y-axes denote the network usage in Mbit/s and the right y-axes show the CPU usage in \%, both of the entire network.
 The bold graphs denote the sum over all nodes, averaged over all experiment repetitions.
 The shaded areas denote the error band.
@@ -149,7 +147,7 @@ Although the theoretical total network load for the entire network can be up to 
 This indicates that every DTN software needs to receive the entire bundle before transmitting it to the next node.
 
 
-To summarize, \dtn requires slightly more CPU utilization than IBR-DTN and Serval, but has the advantage of transmitting files faster than all other DTN systems in most cases, as shown in Section~\ref{subsub:transmission_time}.
+To summarize, \dtn requires slightly more CPU utilization than IBR-DTN and Serval, but has the advantage of transmitting files faster than all other DTN systems in most cases, as shown in Section~\ref{penning2019dtn7:subsub:transmission_time}.
 
 % \subsection{Mobile Scenario}
 
@@ -158,7 +156,7 @@ To summarize, \dtn requires slightly more CPU utilization than IBR-DTN and Serva
 % We evaluated when and how many bundles arrived at the destination.
 
 
-% Table~\ref{tab:arrivals} shows that \dtn needs the longest time to deliver a file in the mobile scenario, reaching around 614 seconds for a 25 MiB file.
+% Table~\ref{penning2019dtn7:tab:arrivals} shows that \dtn needs the longest time to deliver a file in the mobile scenario, reaching around 614 seconds for a 25 MiB file.
 % %the difference is most significant for 25 MiB files.
 % The other DTN software systems require all below 300 seconds, regardless of the file size.
 % In experiments with eight senders, the results are similar, as shown in Fig. TODO.
@@ -180,7 +178,7 @@ To summarize, \dtn requires slightly more CPU utilization than IBR-DTN and Serva
 % IBR-DTN       & 276.65 & 278.22 & 279.23 & 281.88 \\
 % Serval        & 205.18 & 286.34 & 286.41 & 290.38 \\ \hline
 % \end{tabular}
-% \label{tab:arrivals}
+% \label{penning2019dtn7:tab:arrivals}
 % \end{table}
 
 % Using one sender, the file reached the destination in all experiments and all DTN software systems.

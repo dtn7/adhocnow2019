@@ -1,5 +1,5 @@
 \section{Bundle Protocol Version 7}
-\label{sec:bp7}
+\label{penning2019dtn7:sec:bp7}
 
 This section gives an overview of bundle protocols, referring to RFC 4838~\cite{rfc4838} and the current version of the Bundle Protocol (BP) ~\cite{dtn_bp7v13}. The latter has version number 7 and is currently still in active development. We discuss the status of the 13th draft from April 2019 below.
 
@@ -7,26 +7,26 @@ This section gives an overview of bundle protocols, referring to RFC 4838~\cite{
     \centering
     \includegraphics[width=.90\columnwidth]{figs/nodes_endpoints.pdf}
     \caption{Example sensor node scenario with multiple endpoints.}
-    \label{fig:nodes_endpoints}
+    \label{penning2019dtn7:fig:nodes_endpoints}
 \end{figure}
 
  
 \subsection{Basic Concepts}
 
 \subsubsection{Endpoints.}
-\label{ssec:dtn-actors}
+\label{penning2019dtn7:ssec:dtn-actors}
 
 In DTN, there are nodes and endpoints.
 Nodes exchange bundles according to the store-carry-forward principle. 
 Bundles are addressed at endpoints, or more precisely, their characterizing \textit{Endpoint Identifier} (EID), which might not be a currently existing part of the network.
-Fig.~\ref{fig:nodes_endpoints} shows an example of a scenario, where sensor nodes produce readings to be consumed by data sinks.
+Fig.~\ref{penning2019dtn7:fig:nodes_endpoints} shows an example of a scenario, where sensor nodes produce readings to be consumed by data sinks.
 The temperature bundle is addressed directly to \texttt{dtn:s3}, where the lux bundle is headed to \texttt{dtn:sink/lux}, an EID that is handled by two nodes, and thus a multicast. BP7 is endpoint scheme agnostic and supports the null endpoint for anonymous bundles.
 In BP version 6, only endpoints are defined, so it is not possible to address dedicated nodes.
 
 \subsubsection{Bundles and Blocks.}
 
 Packets in a DTN consist of multiple \textit{Blocks} to form logical units called \textit{Bundles}.
-In Fig.~\ref{fig:bundle-sketch}, an example bundle containing the mandatory Primary Block, and two Canonical Blocks, namely a Hop Count Block and the actual Payload Block, is shown, following the example of Fig.~\ref{fig:nodes_endpoints}.
+In Fig.~\ref{penning2019dtn7:fig:bundle-sketch}, an example bundle containing the mandatory Primary Block, and two Canonical Blocks, namely a Hop Count Block and the actual Payload Block, is shown, following the example of Fig.~\ref{penning2019dtn7:fig:nodes_endpoints}.
 
 
 
@@ -65,13 +65,13 @@ In Fig.~\ref{fig:bundle-sketch}, an example bundle containing the mandatory Prim
          \end{tikzpicture}
     }
     \caption{A bundle transmitting a lux value from \texttt{dtn:b2} to \texttt{dtn:sink/lux}.}
-    \label{fig:bundle-sketch}
+    \label{penning2019dtn7:fig:bundle-sketch}
 \end{figure}
 
 
 \paragraph{Primary Block.}
 
-Each bundle begins with a (since BP7 immutable) \textit{Primary Block} (see  Fig.~\ref{fig:bundle-sketch}),  containing 
+Each bundle begins with a (since BP7 immutable) \textit{Primary Block} (see  Fig.~\ref{penning2019dtn7:fig:bundle-sketch}),  containing 
 meta-information about the bundle with the following fields:
 Version;
 Bundle Processing Control Flags to provide information on the bundle, including fragmenting and reporting information;
@@ -82,7 +82,7 @@ Maximum Lifetime of a bundle, expressed in microseconds after creation time;
 Fragment Offset and Total Data Length, if fragmented and indicated by the bundle process control flags.
 
 \paragraph{Canonical Block.}
-Payload and Extension Blocks in Fig.~\ref{fig:bundle-sketch} are summarized as \textit{Canonical Blocks}. 
+Payload and Extension Blocks in Fig.~\ref{penning2019dtn7:fig:bundle-sketch} are summarized as \textit{Canonical Blocks}. 
 These contain a payload in addition to a few block-specific characteristics.
 A Canonical Block consists of a Type Code to identify the kind of block, Number to address the specific block, Control Flags and Data. 
 % The most important canonical blocks are discussed below. 
