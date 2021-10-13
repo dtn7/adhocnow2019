@@ -32,8 +32,9 @@ In Fig.~\ref{fig:bundle-sketch}, an example bundle containing the mandatory Prim
 
 \begin{figure}[tbph]
     \centering
-    \resizebox{.9\textwidth}{!}{
-        \begin{tikzpicture}
+    \rowcolors{0}{white}{white}
+    \resizebox{\textwidth}{!}{
+        \begin{tikzpicture}[scale=1.1]
             \begin{umlpackage}[fill=white]{Bundle}
                 \umlclass[rectangle split parts=2, fill=white]{Primary Block}{
                     Version: \texttt{7} \\
@@ -46,14 +47,14 @@ In Fig.~\ref{fig:bundle-sketch}, an example bundle containing the mandatory Prim
                     Creation Timestamp: (\texttt{0}, \texttt{23}) \\
                     Lifetime: \texttt{3600000}
                 }{}
-                \umlclass[rectangle split parts=2, fill=white, x=4.3, y=0.775]{Hop Count Block}{
+                \umlclass[rectangle split parts=2, fill=white, x=4.3, y=0.0]{Hop Count Block}{
                     Type Code: \texttt{9} \\
                     Number: \texttt{2} \\
                     Control Flags: \textit{None} \\
                     CRC Type: \textit{None} \\
                     Data: (\texttt{64}, \texttt{42})
                 }{}
-                 \umlclass[rectangle split parts=2, fill=white, x=7.65, y=0.775]{Payload Block}{
+                 \umlclass[rectangle split parts=2, fill=white, x=7.65, y=0.0]{Payload Block}{
                     Type Code: \texttt{1} \\
                     Number: \texttt{1} \\
                     Control Flags: \textit{None} \\

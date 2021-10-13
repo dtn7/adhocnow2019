@@ -11,13 +11,13 @@ To execute the total number of 1,440 experiment runs, we used MACI, a framework 
 
 \subsubsection{DTN Software.}
 We compared \dtn with three popular DTN software solutions.
-\textit{Serval}\footurl{https://github.com/servalproject/serval-dna/tree/batphone-release-0.93} is a software suite centered around protocols designed for infra\-structure independent communication~\cite{gardner2011serval}.
+\textit{Serval}\footnote{\url{https://github.com/servalproject/serval-dna/tree/batphone-release-0.93}} is a software suite centered around protocols designed for infra\-structure independent communication~\cite{gardner2011serval}.
 To be able to transfer files in intermittently connected networks, Serval relies on Rhizome, a custom DTN bundle protocol with epidemic routing.
 In our evaluation, we used the latest stable Serval release, which is from April 2016, since the recent development version has stability issues.
-\textit{IBR-DTN}\footurl{https://github.com/ibrdtn/ibrdtn} is an implementation of BP Version 6, aimed to be lightweight and fast~\cite{doering2008ibr}.
+\textit{IBR-DTN}\footnote{\url{https://github.com/ibrdtn/ibrdtn}} is an implementation of BP Version 6, aimed to be lightweight and fast~\cite{doering2008ibr}.
 For comparability, we use the epidemic routing extension instead of the default PRoPHET protocol used by IBR-DTN.
 We use the current HEAD of the git repository to include the latest bug fixes.
-\textit{Forban}\footurl{https://github.com/adulau/Forban} is mainly used as a local peer-to-peer file sharing application using an epidemic routing protocol based on HTTP.
+\textit{Forban}\footnote{\url{https://github.com/adulau/Forban}} is mainly used as a local peer-to-peer file sharing application using an epidemic routing protocol based on HTTP.
 We used the latest HEAD of the git repository, but had to introduce our own patches to make Forban usable.
 %For \dtn, we use the at the moment of writing recent version 0.1.
 
