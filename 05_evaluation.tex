@@ -78,7 +78,7 @@ Finally, every used DTN software logged both the timestamp of sending and receiv
 \subsubsection{Transmission Times.}
 \label{penning2019dtn7:subsub:transmission_time}
 
-\begin{figure}[th]
+\begin{figure}[ht!]
     \centering
   %  \begin{subfigure}[t]{0.5\columnwidth}
   %    \centering
@@ -87,7 +87,7 @@ Finally, every used DTN software logged both the timestamp of sending and receiv
         \label{penning2019dtn7:fig:transmissions1}
   %    \end{subfigure}~
 \end{figure}
-\begin{figure}[th]
+\begin{figure}[ht!]
  %   \begin{subfigure}[t]{0.5\columnwidth}
         \centering
         \includegraphics[width=0.8\columnwidth]{figs/chain-runtimes-64.pdf}
@@ -114,7 +114,7 @@ The larger the files or the longer the chain, the less weight the low protocol o
 Furthermore, it is also remarkable that \dtn, which is written in Go, does not take longer to transmit larger files from end to end in the chain, although IBR-DTN is implemented in C++ and optimized for speed.
 In terms of transmission speeds, Forban takes longer than the other DTN software systems, although differences get smaller the bigger the files are. One explanation is that Forban has a pull-based approach where it actively downloads new bundles after an announcement was received. Therefore, the announcement interval is a natural barrier. If quick data exchange is necessary, the other solutions provide better performance.
 
-\begin{figure}[t]
+\begin{figure}[ht!]
     \includegraphics[width=\columnwidth]{figs/cpu_network-crop.pdf}
     \caption{CPU and network usage for transmitting 25 MiB over 32 hops.}
     \label{penning2019dtn7:fig:cpu_net}
